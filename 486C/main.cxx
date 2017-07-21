@@ -1,4 +1,7 @@
+#include <cmath>
 #include <iostream>
+#include <algorithm>
+#include <vector>
 
 int getAlphabetIdx(char c)
 {
@@ -17,22 +20,31 @@ int getAlphabetIdxRDistance(char src, char dst)
 
 int main()
 {
-	int n, p;
-	bool isLeft = false;
+	int n, p, move = 0, lep, rep;
 	std::string str;
 	std::cin >> n >> p >> str;
 
-	std::vector<int> dist(n/2, 0); 
-	if(p < n/2) isLeft=true;
+	int m = n/2;
+	if(p > m) lep = rep = p = n - p;
+	else lep = rep = --p;
 
-	for(int i = 0; i < n/2; i++)
+	if(n%2 != 0) m++;
+
+	for(int i = 0; i < m; i++)
 	{
-		if(str[i] != str[n-i])
+		if(str[i] != str[n-i-1])
 		{
-			int max = std::max(str[i], str[n-i]), min = std::min(str[i], str[n-i]);
-			dist[i] = std::min(getAlphabetIdxDistance(max, min) > getAlphabetIdxRDistance(max, min))
+			int max = std::max(str[i], str[n-i-1]), min = std::min(str[i], str[n-i-1]);
+			move += std::min(getAlphabetIdxDistance(max, min), getAlphabetIdxRDistance(max, min));
+
+			if(i < p) lep = std::min(lep, i);
+			else rep = std::max(rep, i);
 		}
 	}
 
-	return -1;
+	move += (p - lep > rep - p) ? (rep - p) + (rep - lep):(p - lep) + (rep - lep);
+	
+	std::cout << move << '\n';
+
+	return 0;
 }
