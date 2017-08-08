@@ -1,45 +1,42 @@
-#include <iostream>
-#include <map>
+#include<cstdio>
+#include<algorithm>
 
-std::map<char, int> s, t;
+int s[100], t[100];
+
+void getStrCnt(int* strCnt)
+{
+	char c;
+	while(true)
+	{
+		scanf("%c", &c);
+		if(c == '\n') break;
+		strCnt[c - 'A']++;
+	}
+}
 
 int main()
 {
-	char c;
-	int sum = 0;
-	while(std::cin.get(c))
-	{
-		if(c == '\n')
-			break;
-		s[c]++;
-		sum++;
-	}
+	int yay = 0, whoops = 0;
+	
+	getStrCnt(s);
+	getStrCnt(t);
 
-	while(std::cin.get(c))
+	for(int i = 0; i < 100; i++)
 	{
-		if(c == '\n')
-			break;
-		t[c]++;
-	}
-
-	int cnt = 0;
-	for(std::map<char, int>::iterator it = t.begin(); it != t.end(); ++it)
-	{
-		c = it->first;
-		cnt = it->second;
-
-		if(s.find(c) != s.end())
+		if(s[i] <= t[i]){
+			yay +=s[i];
+			t[i] = t[i] - s[i];
+		}
+		else
 		{
-			s[c] -= cnt;
-			s[c] = (s[c] < 0)? 0:s[c];
+			yay += t[i];
+			s[i] = s[i] - t[i];
 		}
 	}
 
-	int whoops = 0;
-	for(std::map<char, int>::iterator it = s.begin(); it != s.end(); ++it)
-		whoops += it->second;
+	for(int i = 0; i <= 'z'-'A'; i++)
+		whoops += std::min(t[i], s[i]);
 
-	std::cout << sum - whoops << " " << whoops << "\n";
-
+	printf("%d %d\n", yay, whoops);
 	return 0;
 }
