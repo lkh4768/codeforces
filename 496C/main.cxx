@@ -1,39 +1,36 @@
-#include <iostream>
-#include <cstring>
+#include <cstdio>
+#include <string>
+#include <vector>
 
 int main()
 {
-	char table[102][101] = {};
-	int n, m, removeCnt = 0;
-	std::cin >> n >> m;
-
+	std::vector<std::string> table;
+	int n, m, cnt = 0;
+	scanf("%d %d", &n, &m);
 	for(int i = 0; i < n; i++)
 	{
-		for(int j = 1; j <= m; j++)
-			std::cin >> table[j][i];
+		char s[101] = {0};
+		scanf("%s", s);
+		table.push_back(s);
 	}
-	memset(table[0], '0', n);
 
-	for(int j = 1; j <= m; j++)
+	for(int i = 0; i < m; i++)
 	{
-		bool next = false;
-		for(int i = 0; i < n-1; i++)
+		bool beRemove = false;
+		for(int j = 0; j < n-1; j++)
 		{
-			if(table[j][i] > table[j][i+1] && table[j-1][i] == table[j-1][i+1])
-			{
-				strcpy(table[j], table[j-1]);
-				next = true;
-				removeCnt++;
-				break;
-			}
-			else if(table[j][i+1] == table[j][i])
-				next = true;
+			if(table[j][i] > table[j+1][i] && table[j].compare(table[j+1]) > 0)
+				beRemove = true;
 		}
-		if(!next)
-			break;
+
+		if(beRemove)
+		{
+			for(int j = 0; j < n; j++)
+				table[j][i] = 'a';
+			cnt++;
+		}
 	}
 
-	std::cout << removeCnt << '\n';
-
+	printf("%d\n", cnt);
 	return 0;
 }
