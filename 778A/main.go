@@ -1,45 +1,61 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
+	"os"
+	"strconv"
 )
 
-func main() {
-	var rmove int
-	var t, p string
+var in = bufio.NewScanner(os.Stdin)
 
-	fmt.Scan(&t, &p)
+func init() {
+	in.Split(bufio.ScanWords)
+	buf := make([]byte, 2500000, 2500000)
+	in.Buffer(buf, 0)
+}
 
-	tLen := len(t)
-
-	as := make([]int, tLen, tLen)
-	for i := 0; i < tLen; i++ {
-		fmt.Scan(&as[i])
+func readLineints(n int) []int {
+	ns := make([]int, n)
+	for i := 0; i < n; i++ {
+		in.Scan()
+		n, _ := strconv.Atoi(in.Text())
+		ns[n-1] = i
 	}
+	return ns
+}
 
-	r := make([]byte, tLen, tLen)
-	isStop := false
-	for i := tLen - 1; i >= 0; i-- {
-		//fmt.Printf("i: %d, p: %s, as[i]-1: %d, r: %s, rlen: %d, rmove: %d\n", i, string(p), as[i]-1, r, len(r), rmove)
-		r[as[i]-1] = t[as[i]-1]
-		rmove++
-		k := 0
-		isStop = false
-		for j := 0; j < tLen; j++ {
-			if p[k] == r[j] {
-				k++
+func readLineBytes() []byte {
+	in.Scan()
+	return in.Bytes()
+}
+
+func main() {
+	t := readLineBytes()
+	p := readLineBytes()
+	var tLen, pLen int = len(t), len(p)
+	as := readLineints(tLen)
+
+	var l, r int = 0, tLen
+	for r-l > 1 {
+		x := (r + l) / 2
+		j := 0
+		for i := 0; i < tLen; i++ {
+			if t[i] == p[j] && x <= as[i] {
+				j++
 			}
 
-			if k == len(p) {
-				isStop = true
+			if j == pLen {
 				break
 			}
 		}
 
-		if isStop {
-			break
+		if j == pLen {
+			l = x
+		} else {
+			r = x
 		}
 	}
 
-	fmt.Printf("%d\n", tLen-rmove)
+	fmt.Printf("%d\n", l)
 }
