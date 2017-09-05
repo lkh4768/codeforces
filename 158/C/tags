@@ -1,0 +1,8 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+in	/home/lab/codeforces/158/C/main.go	/^var in = bufio.NewScanner(os.Stdin)$/;"	v	language:Go
+main	/home/lab/codeforces/158/C/main.go	/^func main() {$/;"	f	language:Go
+main	/home/lab/codeforces/158/C/main.go	/^package main$/;"	p	language:Go
+PRE_MAKR	/home/lab/codeforces/158/C/main.go	/^const PWD, PRE_MAKR, SEP_MARK string = "pwd", "..", "\/"$/;"	c	language:Go
+printPath	/home/lab/codeforces/158/C/main.go	/^func printPath(path []string) {$/;"	f	language:Go
+PWD	/home/lab/codeforces/158/C/main.go	/^const PWD, PRE_MAKR, SEP_MARK string = "pwd", "..", "\/"$/;"	c	language:Go
+SEP_MARK	/home/lab/codeforces/158/C/main.go	/^const PWD, PRE_MAKR, SEP_MARK string = "pwd", "..", "\/"$/;"	c	language:Go

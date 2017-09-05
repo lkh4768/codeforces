@@ -15,7 +15,7 @@ int main(){
 		if(group[i] == 2) a2 = a2+1;
 		if(group[i] == 1) a1 = a1+1;
 	}
-	
+
 	if(a3 > a1){
 		a3 = a3-a1;
 		r = r+a1;
@@ -45,7 +45,7 @@ int main(){
 			r = r+1;
 		}
 	}
-	
+
 	if(a1 > 0){
 		r = r+(a1/4);
 		if(a1%4 != 0) r = r+1;

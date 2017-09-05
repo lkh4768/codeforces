@@ -1,0 +1,12 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+d	/home/lab/codeforces/158/E/main.go	/^var t, d [4010]int$/;"	v	language:Go
+f	/home/lab/codeforces/158/E/main.go	/^var f [4010][4010]int$/;"	v	language:Go
+in	/home/lab/codeforces/158/E/main.go	/^var in = bufio.NewScanner(os.Stdin)$/;"	v	language:Go
+init	/home/lab/codeforces/158/E/main.go	/^func init() {$/;"	f	language:Go
+k	/home/lab/codeforces/158/E/main.go	/^var n, k, max int$/;"	v	language:Go
+main	/home/lab/codeforces/158/E/main.go	/^func main() {$/;"	f	language:Go
+main	/home/lab/codeforces/158/E/main.go	/^package main$/;"	p	language:Go
+max	/home/lab/codeforces/158/E/main.go	/^var n, k, max int$/;"	v	language:Go
+n	/home/lab/codeforces/158/E/main.go	/^var n, k, max int$/;"	v	language:Go
+readInt	/home/lab/codeforces/158/E/main.go	/^func readInt() int {$/;"	f	language:Go
+t	/home/lab/codeforces/158/E/main.go	/^var t, d [4010]int$/;"	v	language:Go
