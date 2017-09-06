@@ -1,7 +1,0 @@
-!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
-in	/home/lab/codeforces/302A/main.go	/^var in = bufio.NewScanner(os.Stdin)$/;"	v	language:Go
-init	/home/lab/codeforces/302A/main.go	/^func init() {$/;"	f	language:Go
-main	/home/lab/codeforces/302A/main.go	/^func main() {$/;"	f	language:Go
-main	/home/lab/codeforces/302A/main.go	/^package main$/;"	p	language:Go
-out	/home/lab/codeforces/302A/main.go	/^var out = bufio.NewWriterSize(os.Stdout, 300000)$/;"	v	language:Go
-readInt	/home/lab/codeforces/302A/main.go	/^func readInt() int {$/;"	f	language:Go
