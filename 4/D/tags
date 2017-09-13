@@ -1,0 +1,20 @@
+!_TAG_FILE_SORTED	2	/0=unsorted, 1=sorted, 2=foldcase/
+dep	/home/lab/codeforces/4/D/main.go	/^var dep [5001]int$/;"	v	language:Go
+e	/home/lab/codeforces/4/D/main.go	/^var e [5001][3]int$/;"	v	language:Go
+elen	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
+h	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
+in	/home/lab/codeforces/4/D/main.go	/^var in = bufio.NewScanner(os.Stdin)$/;"	v	language:Go
+init	/home/lab/codeforces/4/D/main.go	/^func init() {$/;"	f	language:Go
+Len	/home/lab/codeforces/4/D/main.go	/^func (m Matrix) Len() int           { return elen }$/;"	f	language:Go
+Less	/home/lab/codeforces/4/D/main.go	/^func (m Matrix) Less(i, j int) bool { return m[i][0] < m[j][0] }$/;"	f	language:Go
+main	/home/lab/codeforces/4/D/main.go	/^func main() {$/;"	f	language:Go
+main	/home/lab/codeforces/4/D/main.go	/^package main$/;"	p	language:Go
+Matrix	/home/lab/codeforces/4/D/main.go	/^type Matrix [5001][3]int$/;"	t	language:Go
+max	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
+maxi	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
+n	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
+prev	/home/lab/codeforces/4/D/main.go	/^var prev [5001]int$/;"	v	language:Go
+readInt	/home/lab/codeforces/4/D/main.go	/^func readInt() int {$/;"	f	language:Go
+ret	/home/lab/codeforces/4/D/main.go	/^var ret [5001]int$/;"	v	language:Go
+Swap	/home/lab/codeforces/4/D/main.go	/^func (m *Matrix) Swap(i, j int)     { m[i], m[j] = m[j], m[i] }$/;"	f	language:Go
+w	/home/lab/codeforces/4/D/main.go	/^var n, w, h, max, maxi, elen int$/;"	v	language:Go
