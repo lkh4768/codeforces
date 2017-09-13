@@ -39,7 +39,7 @@ func main() {
 	for i := 0; i < n; i++ {
 		tw, th := readInt(), readInt()
 		if tw > w && th > h {
-			e[i][0], e[i][1], e[i][2] = tw, th, i
+			e[elen][0], e[elen][1], e[elen][2] = tw, th, i
 			elen++
 		}
 	}
@@ -81,7 +81,7 @@ func main() {
 
 	fmt.Printf("%d\n", max)
 	for i := j; i >= 0; i-- {
-		fmt.Printf("%d ", ret[i])
+		fmt.Printf("%d ", ret[i]+1)
 	}
 }
 
